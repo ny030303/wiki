@@ -1,0 +1,59 @@
+
+
+.split-artpieces {
+    position: relative;
+    height: 70vh;
+    background-color: #cca69a;
+}
+
+.split-artpieces__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.split-artpiece {
+    width: 100%;
+    height: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.split-artpiece__play_btn {
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    top: calc(50% - 65px / 2);
+    left: calc(50% - 65px / 2);
+    z-index: 101;
+    border-radius: 50%;
+    background-color: #f37449;
+}
+
+.split-artpiece__play_btn img {
+    width: 18px;
+    height: 24px;
+    margin: 21px 0 0 25px;
+}
+
+@media only screen and (min-width: 1024px) {
+    .split-artpieces {
+        position: absolute;
+        left:  4vw;
+        /* top: 386px; */
+        width: 40vw;
+        z-index: 2;
+    }
+
+    .split-artpieces.is-sticky {
+        position: fixed;
+        top: 0;
+        left: 4vw;
+    }
+
+    .split-artpieces {
+        height: 100vh;
+    }
+}
+

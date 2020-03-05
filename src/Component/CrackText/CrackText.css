@@ -1,0 +1,17 @@
+.home-hero__title--half {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    color: currentColor;
+
+}
+
+.home-hero__title--half span {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: .45s;
+}

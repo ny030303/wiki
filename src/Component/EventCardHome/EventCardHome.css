@@ -1,0 +1,192 @@
+.event-card-home {
+    display: inline-flex;
+    flex-direction: column;
+    position: relative;
+    overflow: visible;
+    text-align: center;
+}
+
+.event-card-home__wrapper {
+    position: relative;
+}
+
+.event-card-home__info {
+
+}
+
+.event-card-home__image {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    padding: .8em .8em 4.5em;
+    background-color: #9CD08E;
+    transition: .45s;
+}
+
+.event-card-home__image:hover {
+    /*padding: 4em 4em 7em;*/
+}
+
+.event-card-home__src {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: box-shadow .45s cubic-bezier(.215,.61,.355,1);
+    box-shadow: inset 0 0 0 0 currentColor;
+    padding-top: 100%;
+    background-image: url("/image/example.jpg");
+}
+
+.event-card-home .conversion-button {
+    position: absolute;
+    right: 0;
+    bottom: .4em;
+    padding: 0;
+    width: 3.7em;
+    height: 3.7em;
+    transform: translate(50%,50%);
+    z-index: 1;
+    background-color: #231f20;
+    border-radius: 50%;
+}
+
+.event-card-home .buy-ticket-button {
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: .2em;
+    cursor: pointer;
+}
+
+.event-card__date strong {
+    display: block;
+    max-width: 80%;
+    margin: auto;
+    white-space: normal;
+}
+
+.event-card__date {
+    font-size: .8vw;
+    font-family: 'Krona One', sans-serif;
+    /*!*font-family: 'Alegreya Sans', sans-serif;*!*/
+    /*font-family: 'Noto Sans KR', sans-serif;*/
+    font-weight: 200;
+    line-height: 1.2em;
+    letter-spacing: 0;
+    position: absolute;
+    left: 0;
+    bottom: 4.5em;
+    width: 100%;
+    text-align: center;
+    color: #231f20;
+    transition: transform .45s cubic-bezier(.215,.61,.355,1),opacity .45s,-webkit-transform .45s cubic-bezier(.215,.61,.355,1)!important;
+    transition-delay: 0s!important;
+    /*opacity: 0;*/
+}
+
+.event-card-home__title {
+    font-size: 1.33333vw;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: 600;
+    letter-spacing: .02em;
+    line-height: .9em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: normal;
+    width: 70%;
+    margin: 0 auto;
+    text-transform: uppercase;
+    min-height: 16vw;
+    max-height: 24vw;
+
+    position: absolute;
+    left: 50%;
+    bottom: .1em;
+    transform: translate(-50%, 50%);
+    text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+    .event-card-home .conversion-button {
+        width: 3.8em;
+        height: 3.8em;
+    }
+
+    .event-card-home .buy-ticket-button {
+        padding: .35em;
+    }
+
+    .event-card__date {
+        /*font-size: 12px;*/
+        bottom: 3.5em;
+    }
+
+    .event-card-home__title {
+        line-height: 1.6em;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .home-exhibition__inner .event-card-home {
+        width: 32vw;
+        margin: 0 2vw;
+    }
+
+    .event-card-home__image {
+        padding: 2em 2em 8em;
+    }
+
+    .event-card-home .conversion-button {
+        width: 4em;
+        height: 4em;
+
+    }
+
+    .event-card-home .buy-ticket-button {
+        padding: .5em;
+    }
+
+    .event-card__date {
+        /*font-size: 12px;*/
+        bottom: 6.5em;
+    }
+
+    .event-card-home__title {
+        font-size: 33px;
+        font-size: 2.2vw;
+        font-family: 'Alegreya Sans', sans-serif;
+        font-weight: 600;
+        letter-spacing: .02em;
+        line-height: .9em;
+        line-height: .96em;
+        width: 70%;
+        min-height: 8vw;
+        max-height: 10vw;
+
+    }
+}
+
+
+
+@media (max-width: 1500px) {
+    .event-card__date {
+        font-size: 12px;
+        /*bottom: 3.2em;*/
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .event-card-home__title {
+        font-size: 2.73333vw;
+        font-family: 'Alegreya Sans', sans-serif;
+        font-weight: 600;
+        letter-spacing: .02em;
+        line-height: .9em;
+    }
+}

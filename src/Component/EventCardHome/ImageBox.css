@@ -1,0 +1,40 @@
+.image-box-root {
+  width: 375px;
+  height: 375px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.image-box-inner-clip {
+  background-clip: padding-box;
+  width: 100%;
+  height: 100%;
+}
+
+.image-box-reveal {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-box-reveal:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  border-color: lightblue;
+  border-width: 0;
+  border-style: solid;
+  transition-property: border width;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+
+.image-box-reveal:hover:before {
+  border-width: 20px;
+  transform: translateY(0);
+}

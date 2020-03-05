@@ -1,0 +1,71 @@
+.ticket-visit-button--top {
+    color: currentColor;
+    right: 8vw;
+    position: relative;
+    z-index: 4;
+}
+
+.ticket-visit-button .hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: .45s;
+    transform: translateX(-100%);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 600;
+    letter-spacing: .02em;
+    line-height: .9em;
+    text-transform: uppercase;
+    border: none;
+    z-index: 3;
+    padding: .65em 1.75em;
+    overflow: hidden;
+    display: flex;
+    white-space: nowrap;
+    border-radius: 0;;
+}
+
+.ticket-visit-button {
+    font-size: 1.26667vw;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 600;
+    letter-spacing: .02em;
+    line-height: .9em;
+    text-transform: uppercase;
+    border: none;
+    z-index: 3;
+    padding: .65em 1.75em;
+    overflow: hidden;
+    transition: color .45s cubic-bezier(.215,.61,.355,1);
+    display: flex;
+    white-space: nowrap;
+    border-radius: 0;
+}
+
+.ticket-visit-button:hover .hover {
+    left: 100%;
+}
+
+/*.ticket-visit-button:hover {*/
+/*    color: #231f20 !important;*/
+/*}*/
+
+
+@media only screen and (max-width: 1500px) and (min-width: 1200px) {
+    .ticket-visit-button, .hover {
+        font-size: 25px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .ticket-visit-button, .hover {
+        font-size: 25px;
+        font-size: 1.66667vw;
+        font-family: 'Noto Sans KR', sans-serif;
+        font-weight: 600;
+        letter-spacing: .02em;
+        line-height: .9em;
+    }
+}

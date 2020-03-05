@@ -1,0 +1,196 @@
+.orangeSection {
+    text-align: center;
+    background-color: #f37449;
+}
+
+.home-discover__title_wrap {
+    margin-bottom: 4vw;
+}
+
+.home-discover__title {
+    font-family: 'Alegreya Sans', sans-serif;
+    position: relative;
+
+    font-size: 4vw;
+    font-weight: 600;
+    letter-spacing: .02em;
+    line-height: .9em;
+    text-transform: uppercase;
+    margin-bottom: .3em;
+    margin-left: -.1em;
+}
+
+.home-highlighted-section__header {
+    margin-bottom: 12vw;
+    display: inline-block;
+}
+
+.locations__container {
+    position: relative;
+    width: 100%;
+    padding: 8vw 0 10vw;
+}
+
+.locations__wrapper {
+    padding-bottom: 8vw;
+    display: flex;
+    width: 100%;
+}
+
+.locations__single {
+    font-size: 16px;
+    font-size: 1.06667vw;
+    font-family: "Twentieth Century W01",Futura,Helvetica,Arial,sans-serif;
+    font-weight: 200;
+    line-height: 1em;
+    line-height: 1.2em;
+    letter-spacing: 0;
+    width: 50%;
+    padding: 0 4vw;
+    text-align: center;
+}
+
+.locations__image {
+    padding-top: 61.5174%;
+    color: rgb(154, 209, 139);
+    background-image: url(https://www.franshalsmuseum.nl/wp-content/uploads/2020/01/hof-1.jpg);
+    margin-bottom: .5em;
+    height: 0;
+    width: 100%;
+    border: 20px solid;
+}
+
+.locations__address {
+    position: relative;
+    width: 100%;
+    display: block;
+    margin-bottom: 4vw;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-weight: normal;
+    /*font-family: 'Noto Sans KR', sans-serif;*/
+}
+
+.locations__address strong {
+    display: block;
+    width: 100%;
+}
+
+.locations__title {
+    font-size: 20px;
+    font-size: 1.33333vw;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    letter-spacing: .01em;
+    line-height: 1em;
+    padding-bottom: 1.6vw;
+    text-transform: inherit;
+}
+
+.locations__copy {
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-size: 1.06667vw;
+    font-weight: 300;
+    letter-spacing: .01em;
+    line-height: 1em;
+
+}
+
+@media (max-width: 1500px) {
+    .home-discover__title {
+        font-size: 60px;
+    }
+
+    .locations__copy {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .home-highlighted-section__header {
+        margin-bottom: 4vw;
+    }
+
+    .locations__container {
+        padding: 0 8vw;
+    }
+
+    .locations__wrapper {
+        padding-bottom: 4vw;
+    }
+
+    .locations__single:first-of-type {
+        padding-left: 0;
+    }
+
+    .locations__single:last-of-type {
+        padding-right: 0;
+    }
+
+    .locations__single {
+        padding: 0 1vw;
+
+    }
+
+    .locations__address {
+        margin-bottom: .8vw;
+    }
+
+    .locations__copy {
+        font-size: 24px;
+        font-size: 1.6vw;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 300;
+        letter-spacing: .01em;
+        line-height: 1em;
+    }
+
+    .locations__title {
+        font-size: 29px;
+        font-size: 1.93333vw;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 500;
+        letter-spacing: .01em;
+        line-height: 1em;
+    }
+}
+
+@media only screen and (max-width: 1500px) and (min-width: 1200px) {
+    .home-discover__title {
+        font-size: 110px;
+    }
+
+    .locations__single {
+        font-size: 21px;
+    }
+
+    .locations__copy {
+        font-size: 24px;
+    }
+
+    .locations__title {
+        font-size: 29px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .home-discover__title {
+        /*font-size: 110px;*/
+        font-size: 7.33333vw;
+        font-family: 'Alegreya Sans', sans-serif;
+        font-weight: 600;
+        letter-spacing: .02em;
+        line-height: .9em;
+    }
+
+    .locations__single {
+        font-size: 21px;
+        font-size: 1.4vw;
+        /*font-family: "Twentieth Century W01",Futura,Helvetica,Arial,sans-serif;*/
+        font-weight: 200;
+        line-height: 1em;
+        line-height: 1.2em;
+        letter-spacing: 0;
+    }
+}
+
