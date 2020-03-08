@@ -1,8 +1,13 @@
 .image-box-root {
-  width: 375px;
-  height: 375px;
+  /*width: 375px;*/
+  height: 29vw;
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
+  background-position: center;
+  transition: box-shadow .45s cubic-bezier(.215,.61,.355,1);
+  box-shadow: inset 0 0 0 0 currentColor;
+  /*padding-top: 100%;*/
 }
 
 .image-box-inner-clip {

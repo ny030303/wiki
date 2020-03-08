@@ -4,11 +4,10 @@
 }
 
 .home-exhibition__inner {
-    padding-left: 8vw;
     width: auto;
     overflow: hidden;
     white-space: nowrap;
-    padding-bottom: 6em;
+    padding: 3vw 0 8em 8vw;
 }
 
 .home-exhibition .top-wrapper {
@@ -54,4 +53,8 @@
         width: 32vw;
         margin: 0 2vw;
     }
+}
+
+#event-card-list .slick-list {
+    overflow: initial;
 }

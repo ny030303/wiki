@@ -1,0 +1,31 @@
+.popupPage {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 17;
+}
+
+.popupPage__dark {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.popupPage__contents {
+    padding: 20px;
+
+    width: 517px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -517px;
+    margin-left: 4vw;
+    transition: .55s;
+}
+
+
+.popupPage__title {
+
+}

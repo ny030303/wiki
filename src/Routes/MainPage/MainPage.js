@@ -5,6 +5,7 @@ import PinkSection from "./PinkSection/PinkSection";
 import OrangeSection from "./OrangeSection/OrangeSection";
 import PurpleSection from "./PurpleSection/PurpleSection";
 import CrackImageSection from "./CrackImageSection/CrackImageSection";
+import PopupPage from "../PopupPage/PopupPage";
 
 
 export default class MainPage extends React.Component {

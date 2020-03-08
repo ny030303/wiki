@@ -36,8 +36,8 @@ const RevealBorderBox = styled.div`
 export class ImageBox extends React.Component {
   render() {
     return (
-        <div className="image-box-root" style={{backgroundImage: `url(${this.props.image})`}}>
-          <RevealBorderBox className="image-box-inner-clip" direction={false} borderColor={"#9CD08E"} borderWidth={15}/>
+        <div className="image-box-root" style={{backgroundImage: `url(${this.props.image})`, height: this.props.imageHeight ? this.props.imageHeight : ""}}>
+          <RevealBorderBox className="image-box-inner-clip" direction={this.props.direction} borderColor={this.props.borderColor} borderWidth={15}/>
         </div>
     );
   };
