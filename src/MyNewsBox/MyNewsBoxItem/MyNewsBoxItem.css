@@ -1,0 +1,19 @@
+.myNewsBox__item {
+    display: flex;
+    color: #fce373;
+    font-family: 'Noto Sans KR', sans-serif;
+    justify-content: space-evenly;
+}
+
+.myNewsBox__item_time {
+    color: #ffaa64;
+}
+
+.myNewsBox__item_name {
+    /*color: #77b4e5;*/
+    cursor: pointer;
+}
+
+.myNewsBox__item_name:hover {
+    text-decoration: underline;
+}

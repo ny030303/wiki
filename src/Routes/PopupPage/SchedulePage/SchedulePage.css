@@ -1,0 +1,44 @@
+.popupPage__calendar_wrap .react-calendar__tile--active {
+    background: #f37449 !important;
+    color: white;
+}
+
+.popupPage__calendar_wrap .react-calendar {
+    border: 15px solid rgb(252, 227, 115);
+}
+
+.popupPage__calendar_wrap {
+    display: block;
+    margin: 0 auto;
+    width: 350px;
+}
+
+
+
+.popupPage__schedule_wrap {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.popupPage__schedule {
+    padding: 10px;
+    background-color: #e66236;
+    width: 100%;
+    color: #231f20;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.popupPage__schedule_date {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.popupPage__schedule_name {
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.popupPage__schedule_place {
+    color: #414141;
+    font-size: 14px;
+}

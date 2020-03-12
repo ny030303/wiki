@@ -8,7 +8,7 @@
 }
 
 .home-hero__inner {
-    padding: 24vw 4vw 0vw;
+    padding: 2vw 4vw 0vw;
 }
 
 .home-hero__title {
@@ -47,7 +47,7 @@
 
 @media only screen and (min-width: 768px) {
     .home-hero__inner {
-        padding: 7vw 4vw .5vw;
+        padding: 2vw 4vw .5vw;
     }
 }
 
@@ -80,7 +80,11 @@
 }
 
 .home-hero__logo {
-    /*width: 30px;*/
-    /*height: 30px;*/
-    /*background-image: url("/image/examLogo.png");*/
+    height: 4.2vw;
+    width: 9.489362vw;
+    background-image: url("/image/logo4.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 10px auto;
+    cursor: pointer;
 }

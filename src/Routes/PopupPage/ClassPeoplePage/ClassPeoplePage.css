@@ -1,0 +1,58 @@
+.classPeople__teacher_wrap {
+    width: 100%;
+    /*height: 100px;*/
+    display: flex;
+}
+
+.classPeople__teacher_image {
+    width: 200px;
+    height: 180px;
+    background-image: url("/image/teacher_exam.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 7px solid rgb(69, 40, 94);
+}
+
+.classPeople__badge {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.classPeople__teacher_info {
+    width: 260px;
+    padding: 10px 30px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.classPeople__teacher_name {
+    font-size: 22px;
+    color: rgb(32, 8, 54);
+    font-weight: 600;
+}
+
+.classPeople__teacher_sub_info {
+    font-size: 14px;
+    color: #1b1b1b;
+}
+
+.popupPage__contents .nav-link.active {
+    color: #ffffff;
+    background-color: #45285e;
+    border-color: #45285e #45285e #45285e;
+}
+
+.popupPage__contents .nav-tabs {
+    border-bottom: 1px solid #45285e;
+}
+
+.nav-tabs .nav-link:hover {
+    border-color: #45285e #45285e #45285e;
+}
+
+.popupPage__contents a {
+    color: #200836;
+}
+
+.popupPage__contents a:hover {
+    color: #200836;
+}

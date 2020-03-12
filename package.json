@@ -12,6 +12,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-fontawesome": "^1.7.1",
+    "react-pose-text": "^3.1.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "react-slick": "^0.25.2",
@@ -40,6 +41,10 @@
     ]
   },
   "devDependencies": {
-    "react-pose": "^4.0.10"
+    "react-calendar": "^2.19.2",
+    "react-pose": "^4.0.10",
+    "simple-react-calendar": "^2.0.0",
+    "@tinymce/tinymce-react": "^3.5.0",
+    "react-froala-wysiwyg": "^3.1.0"
   }
 }

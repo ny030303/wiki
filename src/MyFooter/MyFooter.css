@@ -51,6 +51,12 @@
     text-align: center;
 }
 
+.footer-newsletter__input_wrap {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
 @media only screen and (min-width: 1024px) {
     .myFooter {
         padding: 8vw 0 3.4vw;
@@ -109,3 +115,7 @@
         letter-spacing: .01em;
     }
 }
+
+
+/*===========input style===========*/
+

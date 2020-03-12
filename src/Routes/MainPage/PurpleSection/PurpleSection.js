@@ -19,7 +19,8 @@ export default class PurpleSection extends React.Component {
 
   changePercent = () => {
     // console.log(window);
-    if(this.state && window.pageYOffset+window.innerHeight > document.querySelector(".purpleSection").offsetTop) {
+    let purpleSection = document.querySelector(".purpleSection");
+    if(this.state && purpleSection && window.pageYOffset+window.innerHeight > purpleSection.offsetTop) {
       this.setState({mainCrackTextPercent: 0});
     } else {
       this.setState({mainCrackTextPercent: 100});
@@ -46,7 +47,7 @@ export default class PurpleSection extends React.Component {
         <div className="home-journal__news-cards">
           <div className="news-card">
             <div className="news-card__thumbnail">
-              <ImageBox image={"/image/example.jpg"} imageHeight="8vw" direction={false} borderColor="rgb(249, 160, 78)"/>
+              <ImageBox image={"/image/class_image8.jpg"} imageHeight="8vw" direction={false} borderColor="rgb(249, 160, 78)"/>
             </div>
             <div className="news-card__infos">
               <div className="news-card__post-date"> 4th March 2020</div>
@@ -56,7 +57,7 @@ export default class PurpleSection extends React.Component {
 
           <div className="news-card">
             <div className="news-card__thumbnail">
-              <ImageBox image={"/image/example.jpg"} imageHeight="8vw" direction={false} borderColor="rgb(249, 160, 78)"/>
+              <ImageBox image={"/image/mainBack2-1.png"} imageHeight="8vw" direction={false} borderColor="rgb(249, 160, 78)"/>
             </div>
             <div className="news-card__infos">
               <div className="news-card__post-date"> 4th March 2020</div>

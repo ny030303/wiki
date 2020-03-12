@@ -18,7 +18,8 @@ export default class OrangeSection extends React.Component {
 
   changePercent = () => {
     // console.log(window.pageYOffset);
-    if(this.state && window.pageYOffset+window.innerHeight > document.querySelector(".orangeSection").offsetTop) {
+    let orangeSection = document.querySelector(".orangeSection");
+    if(this.state && orangeSection && window.pageYOffset+window.innerHeight > orangeSection.offsetTop) {
       this.setState({mainCrackTextPercent: 0});
     } else {
       this.setState({mainCrackTextPercent: 100});
@@ -36,14 +37,14 @@ export default class OrangeSection extends React.Component {
           <div className="locations__container">
             <div className="locations__wrapper">
               <div className="locations__single">
-                <div className="locations__image intrinsic"/>
+                <div className="locations__image intrinsic" style={{backgroundImage: `URL('${"/image/class_image1.jpg"}')`}}/>
                 <span className="locations__address">
                   <strong>HOF</strong>
                     Groot Heiligland 62<br/>2011 ES Haarlem
                 </span>
               </div>
               <div className="locations__single">
-                <div className="locations__image intrinsic"/>
+                <div className="locations__image intrinsic" style={{backgroundImage: `URL('${"/image/class_image7.jpg"}')`}}/>
                 <span className="locations__address">
                   <strong>HOF</strong>
                     Groot Heiligland 62<br/>2011 ES Haarlem

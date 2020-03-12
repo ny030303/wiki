@@ -4,6 +4,7 @@ import FontAwesome from 'react-fontawesome';
 import {withRouter} from "react-router-dom";
 import App from "../App";
 import PopupPage from "../Routes/PopupPage/PopupPage";
+import pencil from "../Component/SVG/edit2.svg";
 
 class MyLeftHeader extends React.Component {
 
@@ -33,7 +34,7 @@ class MyLeftHeader extends React.Component {
         }
         <div className="myLeftHeader__inner">
           {
-            ["calendar", "ticket"].map((v, i) =>
+            ["calendar", "users"].map((v, i) =>
               (
                 <div key={i} className="myLeftHeader__item" data-page={v} onClick={this.changePage}>
                   <div className="animation-icon" title="Hooray!">
@@ -48,19 +49,15 @@ class MyLeftHeader extends React.Component {
             )
           }
           <button type="button" id="hamburger" className="button-reset js-toggleMenu"
-                  onClick={() => this.changePage("/")}
+                  onClick={() => this.props.history.push("/edit")}
                   style={{backgroundColor: "rgb(252, 227, 115)"}}>
-            <span id="hamburger__icon">
-                <span></span>
-                <span></span>
-                <span></span>
-            </span>
+            <img src={pencil} className="hamburger__pencil" alt="pencil"/>
           </button>
 
           {
             ["search", "map-marker"].map((v, i) =>
               (
-                <div key={i} className="myLeftHeader__item">
+                <div key={i} className="myLeftHeader__item" data-page={v} onClick={this.changePage}>
                   <div className="animation-icon">
                     <FontAwesome
                       className="iconStyle"

@@ -37,7 +37,7 @@ export default class YellowSection extends React.Component {
       <div className="yellowSection">
         <div className="home-hero">
           <div className="home-hero__inner">
-            <div className="home-hero__logo"></div>
+            <div className="home-hero__logo"/>
             <div style={{marginBottom: "1em"}}>
 
               <CrackText textClass="home-hero__title" textName="WELECOME" crackPercent={this.state.mainCrackTextPercent}/>
