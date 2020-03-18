@@ -72,7 +72,7 @@ export default class EditPage extends React.Component {
             </div>
             <CKEditor
               editor={ClassicEditor}
-              config={{ckfinder: {uploadUrll: ckfinderUrl}}}
+              config={{ckfinder: {uploadUrl: ckfinderUrl}}}
               onInit={editor => {
                 // You can store the "editor" and use when it is needed.
                 // console.log('Editor is ready to use!', editor);

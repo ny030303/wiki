@@ -46,9 +46,18 @@ export default class WritingPage extends React.Component {
           {/*  Let's fill in a document.*/}
           <div className="writingPage__title">{writingInfo.title}</div>
         </div>
-        <div className="writingPage__body">
-          <div className="writingPage__body_margin" ref={this.contents}/>
+        {/*<div className="writingPage__body">*/}
+        {/*  <div className="writingPage__body_margin" />*/}
+        {/*</div>*/}
+        <div className="ck ck-reset ck-editor ck-rounded-corners" role="application" dir="ltr" lang="en">
+          <div className="ck ck-editor__main" role="presentation">
+            <div className="ck ck-content ck-editor__editable ck-rounded-corners ck-editor__editable_inline ck-blurred"
+                 lang="en" dir="ltr" role="textbox" aria-label="Rich Text Editor, main">
+              <div ref={this.contents}/>
+            </div>
+          </div>
         </div>
+
       </div>
     );
   };

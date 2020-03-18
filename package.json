@@ -52,5 +52,6 @@
     "react-froala-wysiwyg": "^3.1.0",
     "react-pose": "^4.0.10",
     "simple-react-calendar": "^2.0.0"
-  }
+  },
+  "proxy": "http://localhost/"
 }
