@@ -1,6 +1,7 @@
 import * as React from 'react';
 import "./SearchPage.css";
 import RoundInput from "../../../Component/RoundInput/RoundInput";
+import {withRouter} from "react-router-dom";
 
 const charPoses = {
   exit: {y: 20, opacity: 0},
@@ -16,11 +17,12 @@ const charPoses = {
   }
 };
 
-export default class SearchPage extends React.Component {
+class SearchPage extends React.Component {
 
   constructor(props) {
     super(props);
     this.contents = React.createRef();
+    this.searchInput = React.createRef();
   }
 
   componentDidMount() {
@@ -32,13 +34,18 @@ export default class SearchPage extends React.Component {
   //
   // }
 
+  searchEvent = () => {
+   this.props.history.push("/search/" + this.searchInput.current.value);
+    this.props.closePopup();
+  };
+
   render() {
     return (
       <div className="popupPage__contents" ref={this.contents} style={{backgroundColor: "#6fab9e", overflowY:"hidden"}}>
         <br/><br/><br/><br/><br/><br/><br/><br/>
         <div className="searchPage__title">What are you looking for?</div>
         <div className="searchPage__input_wrap">
-          <RoundInput/>
+          <RoundInput inputRef={this.searchInput} searchEvent={this.searchEvent}/>
         </div>
         <br/><br/>
         <div className="searchPage__suggested_query_wrap">
@@ -60,4 +67,6 @@ export default class SearchPage extends React.Component {
       </div>
     );
   };
-};
+}
+
+export default withRouter(SearchPage);

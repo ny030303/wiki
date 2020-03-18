@@ -23,7 +23,7 @@ export default class PopupPage extends React.Component {
               case "users":
                 return (<ClassPeoplePage/>);
               case "search":
-                return (<SearchPage/>);
+                return (<SearchPage closePopup={this.props.closePopup}/>);
                 // "search", "map-marker"
               case "question":
                 return (<div></div>);

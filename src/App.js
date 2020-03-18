@@ -36,7 +36,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={MainPage}/>
             <Route exact path="/edit" component={EditPage}/>
-            <Route exact path="/search" component={SearchResultPage}/>
+            <Route exact path="/search/:text" component={SearchResultPage}/>
             <Route exact path="/panorama" component={PanoramaPage}/>
             <Route exact path="/writing/:writingId" component={WritingPage}/>
           </Switch>

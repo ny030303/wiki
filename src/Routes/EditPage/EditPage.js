@@ -2,7 +2,6 @@ import * as React from 'react';
 import "./EditPage.css";
 import CrackText from "../../Component/CrackText/CrackText";
 import CKEditor from '@ckeditor/ckeditor5-react';
-import Collection from '@ckeditor/ckeditor5-build-classic';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import alertDialog2 from "../../services/AlertDialog2";
 import {insertWriting} from "../../services/DataService";
@@ -41,7 +40,7 @@ export default class EditPage extends React.Component {
       let data = {
         useridx: escape(JSON.parse(localStorage.getItem("loginUserInfo")).idx),
         title: this.editTitleInput.current.value.trim(),
-        contents: this.state.contents,
+        contents: escape(this.state.contents),
       };
       insertWriting(data, (res) => {
         console.log(res);
@@ -55,6 +54,7 @@ export default class EditPage extends React.Component {
   };
 
   render() {
+    const ckfinderUrl = "/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images&responseType=json";
     return (
       <div className="editPage page">
         <div className="editPage__head">
@@ -72,6 +72,7 @@ export default class EditPage extends React.Component {
             </div>
             <CKEditor
               editor={ClassicEditor}
+              config={{ckfinder: {uploadUrll: ckfinderUrl}}}
               onInit={editor => {
                 // You can store the "editor" and use when it is needed.
                 // console.log('Editor is ready to use!', editor);

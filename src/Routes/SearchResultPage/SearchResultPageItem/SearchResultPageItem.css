@@ -1,0 +1,26 @@
+
+.searchResultPage__result {
+
+    padding: 20px;
+    background-color: #5e9d8f;
+    margin-bottom: 20px;
+    width: 1045px;
+}
+
+.searchResultPage__result:last-child {
+    border-bottom: 0 none;
+}
+
+.searchResultPage__result_title {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    display: inline-block;
+    margin: 0 6px;
+}
+
+.searchResultPage__result_text {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    color: #363636;
+}

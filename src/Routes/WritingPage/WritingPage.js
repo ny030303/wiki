@@ -29,7 +29,7 @@ export default class WritingPage extends React.Component {
     getWriting(data, (res) => {
       console.log(res.data);
       this.setState({writingInfo: res.data});
-      this.contents.current.innerHTML = res.data.contents;
+      this.contents.current.innerHTML = unescape(res.data.contents);
     });
   };
 

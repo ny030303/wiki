@@ -15,7 +15,7 @@ export  default class RoundInput extends React.Component {
     return (
       <div className="roundInput__wrap">
         <input type="text" className="roundInput" ref={this.props.inputRef} placeholder="Just Here..."/>
-        <img src={icon} alt="search" className="roundInput__icon"/>
+        <img src={icon} alt="search" className="roundInput__icon" onClick={this.props.searchEvent}/>
       </div>
     );
   };

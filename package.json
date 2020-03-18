@@ -46,10 +46,11 @@
     ]
   },
   "devDependencies": {
-    "react-calendar": "^2.19.2",
-    "react-pose": "^4.0.10",
-    "simple-react-calendar": "^2.0.0",
     "@tinymce/tinymce-react": "^3.5.0",
-    "react-froala-wysiwyg": "^3.1.0"
+    "axios": "^0.19.2",
+    "react-calendar": "^2.19.2",
+    "react-froala-wysiwyg": "^3.1.0",
+    "react-pose": "^4.0.10",
+    "simple-react-calendar": "^2.0.0"
   }
 }

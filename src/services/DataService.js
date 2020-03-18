@@ -69,8 +69,16 @@ export const getWriting = (data, callback) => {
   axios.post(`/php/getWriting.php`, formData).then(res => {
     if (callback) callback(res.data);
   });
-
 };
+
+export const getSearchWritings = (data, callback) => {
+  const formData = new FormData();
+  Object.keys(data).forEach(key => formData.append(key, data[key]));
+  axios.post(`/php/getSearchWritings.php`, formData).then(res => {
+    if (callback) callback(res.data);
+  });
+};
+
 
 // ======== newsBox ========
 
