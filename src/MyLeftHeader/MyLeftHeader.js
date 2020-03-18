@@ -55,7 +55,7 @@ class MyLeftHeader extends React.Component {
           </button>
 
           {
-            ["search", "map-marker"].map((v, i) =>
+            ["search", "question"].map((v, i) =>
               (
                 <div key={i} className="myLeftHeader__item" data-page={v} onClick={this.changePage}>
                   <div className="animation-icon">

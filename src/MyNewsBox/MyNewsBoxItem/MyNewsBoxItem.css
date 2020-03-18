@@ -12,6 +12,11 @@
 .myNewsBox__item_name {
     /*color: #77b4e5;*/
     cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100px;
+    height: 20px;
 }
 
 .myNewsBox__item_name:hover {

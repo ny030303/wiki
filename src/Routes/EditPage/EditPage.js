@@ -1,17 +1,57 @@
 import * as React from 'react';
 import "./EditPage.css";
-import LineInput from "../../Component/LineInput/LineInput";
-import { Editor } from '@tinymce/tinymce-react';
+import CrackText from "../../Component/CrackText/CrackText";
+import CKEditor from '@ckeditor/ckeditor5-react';
+import Collection from '@ckeditor/ckeditor5-build-classic';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import alertDialog2 from "../../services/AlertDialog2";
+import {insertWriting} from "../../services/DataService";
 
 export default class EditPage extends React.Component {
 
   constructor(props) {
     super(props);
     this.editTitleInput = React.createRef();
+    this.state = {
+      crackTitleTextPercent: 100,
+      contents: ""
+    };
+  }
+
+  componentDidMount() {
+    setTimeout(() => this.setState({crackTitleTextPercent: 0}), 100);
+    document.addEventListener("scroll", this.changePercent.bind(this));
+
   }
 
   handleEditorChange = (content, editor) => {
     console.log('Content was updated:', content);
+  };
+
+  changePercent = () => {
+    if (this.state) {
+      this.setState({crackTitleTextPercent: window.pageYOffset * 100 / 300});
+    }
+  };
+
+  postWritingEvent = () => {
+    if (this.state.contents === "" || this.editTitleInput.current.value.trim() === "") {
+      alertDialog2.show("잠깐만!", "빈 부분이 있으면 안 됩니다.");
+    } else {
+      let data = {
+        useridx: escape(JSON.parse(localStorage.getItem("loginUserInfo")).idx),
+        title: this.editTitleInput.current.value.trim(),
+        contents: this.state.contents,
+      };
+      insertWriting(data, (res) => {
+        console.log(res);
+        if(res.result) {
+          alertDialog2.show("문서 작성 안내",
+            "성공적으로 문서를 작성했습니다. 해당 문서는 왼쪽 헤더에 돋보기 아이콘을 클릭하여 검색할 수 있습니다.");
+          this.editTitleInput.current.value = "";
+        }
+      });
+    }
   };
 
   render() {
@@ -19,36 +59,38 @@ export default class EditPage extends React.Component {
       <div className="editPage page">
         <div className="editPage__head">
           <div className="home-hero__logo" onClick={() => this.props.history.push("/")}/>
+          <br/>
+          <CrackText textClass="editPage__title" textName="Let's fill in a document."
+                     crackPercent={this.state.crackTitleTextPercent}/>
+          {/*  Let's fill in a document.*/}
         </div>
         <div className="editPage__body">
           <div className="editPage__body_margin">
-            <br/><br/>
+            <br/><br/><br/><br/>
             <div className="uk-margin">
               <input className="uk-input" type="text" placeholder="Title" ref={this.editTitleInput}/>
             </div>
-            <Editor
-              apiKey="xy9kjvl2dkarpdy7o7gcb2y2xuz9glhujm609wlm45ne8t7f"
-              init={{
-                height: 700,
-                resize: false,
-                menubar: false,
-                plugins: [
-                  'advlist autolink lists link image charmap print preview anchor',
-                  'searchreplace visualblocks code fullscreen',
-                  'insertdatetime media table paste code help wordcount'
-                ],
-                selector: 'textarea',
-                toolbar1:
-                  'undo redo | formatselect | bold italic backcolor | \
-                  alignleft aligncenter alignright alignjustify | \
-                  bullist numlist outdent indent | removeformat |  link image | help',
-
-                 // change this value according to your html
-                toolbar2: ''
+            <CKEditor
+              editor={ClassicEditor}
+              onInit={editor => {
+                // You can store the "editor" and use when it is needed.
+                // console.log('Editor is ready to use!', editor);
               }}
-              onEditorChange={this.handleEditorChange}
+              onChange={(event, editor) => {
+                const data = editor.getData();
+                this.setState({contents: data});
+                // console.log({event, editor, data});
+              }}
+              onBlur={(event, editor) => {
+                // console.log('Blur.', editor);
+              }}
+              onFocus={(event, editor) => {
+                // console.log('Focus.', editor);
+              }}
             />
-            <button className="uk-button uk-button-secondary" style={{float: "right", marginTop: "10px"}}>SAVE</button>
+            <button className="uk-button uk-button-secondary" style={{float: "right", marginTop: "10px"}}
+                    onClick={this.postWritingEvent}>SAVE
+            </button>
           </div>
         </div>
       </div>

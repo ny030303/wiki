@@ -10,7 +10,7 @@ export default class EventCardHome extends React.Component {
         <div className="event-card-home__wrapper">
           <div className="event-card-home__image">
             {/*<div className="event-card-home__src intrinsic"/>*/}
-            <ImageBox image={"/image/example.jpg"} imageHeight="29vw" direction={true} borderColor="#9CD08E"/>
+            <ImageBox image={this.props.imageLink} imageHeight="29vw" direction={true} borderColor="#9CD08E"/>
             <div className="event-card__date">
               <strong>08 Mar 2019 - 01 Jul 2022</strong>
             </div>

@@ -32,10 +32,9 @@ export default class PinkSection extends React.Component {
 
               <div id="event-card-list">
                 <Slider {...settings}>
-                  <EventCardHome/>
-                  <EventCardHome/>
-                  <EventCardHome/>
-                  <EventCardHome/>
+                  <EventCardHome imageLink="/image/streetview/view1.png"/>
+                  <EventCardHome imageLink="/image/streetview/view2.png"/>
+                  <EventCardHome imageLink="/image/streetview/view3.png"/>
                   {/*<div>1</div>*/}
                   {/*<div>2</div>*/}
                   {/*<div>3</div>*/}

@@ -2,8 +2,8 @@ import * as React from 'react';
 import "./MyNewsBox.css";
 import SplitText from 'react-pose-text';
 import FontAwesome from "react-fontawesome";
-import newspaper from "../Component/SVG/newspaper.svg";
 import MyNewsBoxItem from "./MyNewsBoxItem/MyNewsBoxItem";
+import {getNewBoxPosts} from "../services/DataService";
 
 const charPoses = {
   exit: { y: 20, opacity: 0 },
@@ -24,8 +24,16 @@ export default class MyNewsBox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isShowBox: false
+      isShowBox: false,
+      newsBoxItemInfos: []
     };
+  }
+
+  componentDidMount() {
+    getNewBoxPosts(res => {
+      console.log(res);
+      this.setState({newsBoxItemInfos: res.data});
+    });
   }
 
 
@@ -38,9 +46,9 @@ export default class MyNewsBox extends React.Component {
     return (
       <div className={`myNewsBox${this.state.isShowBox ? " active" : ""}`}>
         <div className="myNewsBox__contents">
-          <MyNewsBoxItem/>
-          <MyNewsBoxItem/>
-          <MyNewsBoxItem/>
+          {
+            this.state.newsBoxItemInfos.map((v,i) => (<MyNewsBoxItem key={i} info={v} closeNewBox={this.showNewBox}/>))
+          }
         </div>
         <div className="myNewsBox__bottomBtn" onClick={this.showNewBox}>
           <div className="myNewsBox__bottomBtn_text">

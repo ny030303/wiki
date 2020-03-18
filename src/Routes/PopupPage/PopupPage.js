@@ -25,6 +25,8 @@ export default class PopupPage extends React.Component {
               case "search":
                 return (<SearchPage/>);
                 // "search", "map-marker"
+              case "question":
+                return (<div></div>);
             }
           })()
         }

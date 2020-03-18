@@ -1,5 +1,6 @@
 import * as React from 'react';
 import "./SearchPage.css";
+import RoundInput from "../../../Component/RoundInput/RoundInput";
 
 const charPoses = {
   exit: {y: 20, opacity: 0},
@@ -33,7 +34,28 @@ export default class SearchPage extends React.Component {
 
   render() {
     return (
-      <div className="popupPage__contents" ref={this.contents} style={{backgroundColor: "#a385bd"}}>
+      <div className="popupPage__contents" ref={this.contents} style={{backgroundColor: "#6fab9e", overflowY:"hidden"}}>
+        <br/><br/><br/><br/><br/><br/><br/><br/>
+        <div className="searchPage__title">What are you looking for?</div>
+        <div className="searchPage__input_wrap">
+          <RoundInput/>
+        </div>
+        <br/><br/>
+        <div className="searchPage__suggested_query_wrap">
+          <div className="searchPage__suggested_query">최선한</div>
+          <div className="searchPage__suggested_query">기능반</div>
+          <div className="searchPage__suggested_query">4실</div>
+
+          <div className="searchPage__suggested_query">4실</div>
+          <div className="searchPage__suggested_query">4실</div>
+          <div className="searchPage__suggested_query">기능반</div>
+          <div className="searchPage__suggested_query">기능반</div>
+          <div className="searchPage__suggested_query">기능반</div>
+          <div className="searchPage__suggested_query">기능반</div>
+          <div className="searchPage__suggested_query">기능반</div>
+          <div className="searchPage__suggested_query">기능반</div>
+          <div className="searchPage__suggested_query">기능반</div>
+        </div>
 
       </div>
     );

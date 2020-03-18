@@ -43,8 +43,36 @@ h1, h2,h3,h4 {
     margin: .5em 0;
 }
 
+.flexCenter {
+    display: flex;
+    justify-content: center;
+}
+
 @media only screen and (min-width: 1024px) {
     .sectionStyle {
         padding: 8vw 0 8vw 40vw;
     }
+}
+
+/*=========scroll style=========*/
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
