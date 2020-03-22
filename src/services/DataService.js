@@ -89,3 +89,14 @@ export const getNewBoxPosts = (callback) => {
     if (callback) callback(res.data);
   });
 };
+
+// ======== QnA ==========
+
+
+export const insertQna = (data, callback) => {
+  const formData = new FormData();
+  Object.keys(data).forEach(key => formData.append(key, data[key]));
+  axios.post(`/php/insertQna.php`, formData).then(res => {
+    if (callback) callback(res.data);
+  });
+};

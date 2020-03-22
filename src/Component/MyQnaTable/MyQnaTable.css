@@ -1,0 +1,32 @@
+.xans-board-listheader {
+    margin: 15px 0 0;
+    color: #353535;
+    font-size: 12px;
+    line-height: 140%;
+    table-layout: fixed;
+    border-top: 2px solid #231f20;
+    /*border-bottom: 1px solid #6A3664;*/
+    /*border-top: 2px solid #5c4c68;*/
+    border-bottom: 1.5px solid #231f20;
+    width: 100%;
+}
+
+.xans-board-listheader th {
+    padding: 25px 0 23px;
+    vertical-align: middle;
+    font-size: 12px;
+}
+
+.xans-board-listheader td {
+    padding: 25px 3px 23px;
+    border-top: 1px solid #888888;
+    /*border-top: 1px solid #e3e3e3;*/
+    text-align: center;
+    vertical-align: middle;
+    height: 65px;
+}
+
+.xans-board-listheader .time {
+    /*color: #939393;*/
+    color: #6e6953;
+}

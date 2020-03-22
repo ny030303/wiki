@@ -106,7 +106,7 @@ export default class MyFooter extends React.Component {
                 )
             }
             <div className="footer-location">
-              dsfsdsdfsdfsd
+
             </div>
           </div>
           <div className="footerBottom"/>

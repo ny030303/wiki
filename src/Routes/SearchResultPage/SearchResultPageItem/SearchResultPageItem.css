@@ -1,8 +1,8 @@
 
 .searchResultPage__result {
-
+    cursor: pointer;
     padding: 20px;
-    background-color: #5e9d8f;
+    background-color: #98c8bd;
     margin-bottom: 20px;
     width: 1045px;
 }
@@ -23,4 +23,14 @@
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 16px;
     color: #363636;
+
+    white-space: normal;
+    line-height: 1.2;
+    height: 3.6em;
+    text-align: left;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }

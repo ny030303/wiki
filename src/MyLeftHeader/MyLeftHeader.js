@@ -21,7 +21,11 @@ class MyLeftHeader extends React.Component {
     while (!elm.dataset.page) {
       elm = elm.parentElement;
     }
-    this.setState({popupPage: elm.dataset.page});
+    if(elm.dataset.page === "question") {
+      this.props.history.push("/qna");
+    } else {
+      this.setState({popupPage: elm.dataset.page});
+    }
   };
 
   closePopup = () => this.setState({popupPage: null});

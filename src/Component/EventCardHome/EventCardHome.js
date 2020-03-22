@@ -2,13 +2,14 @@ import * as React from 'react';
 import "./EventCardHome.css";
 import FontAwesome from "react-fontawesome";
 import {ImageBox} from "./ImageBox";
+import {withRouter} from "react-router-dom";
 
-export default class EventCardHome extends React.Component {
+class EventCardHome extends React.Component {
   render() {
     return (
-      <div className="event-card-home">
+      <div className="event-card-home" >
         <div className="event-card-home__wrapper">
-          <div className="event-card-home__image">
+          <div className="event-card-home__image" onClick={() => this.props.history.push(`/panorama/${this.props.type}`)}>
             {/*<div className="event-card-home__src intrinsic"/>*/}
             <ImageBox image={this.props.imageLink} imageHeight="29vw" direction={true} borderColor="#9CD08E"/>
             <div className="event-card__date">
@@ -33,3 +34,5 @@ export default class EventCardHome extends React.Component {
     );
   };
 };
+
+export default withRouter(EventCardHome);

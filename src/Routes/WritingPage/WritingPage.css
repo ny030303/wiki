@@ -41,3 +41,9 @@
 
 }
 
+.writingPage table {
+    background-color: #fff;
+}
+.writingPage table td, .writingPage table th {
+    border: 1px solid #d9d9d9;
+}

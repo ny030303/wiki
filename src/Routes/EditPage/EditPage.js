@@ -38,7 +38,7 @@ export default class EditPage extends React.Component {
       alertDialog2.show("잠깐만!", "빈 부분이 있으면 안 됩니다.");
     } else {
       let data = {
-        useridx: escape(JSON.parse(localStorage.getItem("loginUserInfo")).idx),
+        useridx: JSON.parse(localStorage.getItem("loginUserInfo")).idx,
         title: this.editTitleInput.current.value.trim(),
         contents: escape(this.state.contents),
       };

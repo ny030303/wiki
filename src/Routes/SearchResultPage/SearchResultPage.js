@@ -16,7 +16,12 @@ export default class SearchResultPage extends React.Component {
   }
 
   componentDidMount() {
+    eventService.emitEvent("panoramaState", true);
     this.updateSearchItemInfos();
+  }
+
+  componentWillUnmount() {
+    eventService.emitEvent("panoramaState", false);
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
