@@ -57,7 +57,7 @@ export default class PurpleSection extends React.Component {
 
           <div className="news-card">
             <div className="news-card__thumbnail">
-              <ImageBox image={"/image/mainBack2-1.png"} imageHeight="8vw" direction={false} borderColor="rgb(249, 160, 78)"/>
+              <ImageBox image={"/image/class_image6.jpg"} imageHeight="8vw" direction={false} borderColor="rgb(249, 160, 78)"/>
             </div>
             <div className="news-card__infos">
               <div className="news-card__post-date"> 4th March 2020</div>

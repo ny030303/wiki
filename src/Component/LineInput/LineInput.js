@@ -10,7 +10,7 @@ export default class LineInput extends React.Component {
 
   render() {
     return (
-      <div className="input-container">
+      <div className={`input-container ${(this.props.classNames) ? this.props.classNames : ""}`}>
         <input type="text" id={this.props.labelFor} ref={this.props.inputRef} required/>
         <label className="input_placeholder_style" htmlFor={this.props.labelFor}>{this.props.placeHolder}</label>
       </div>

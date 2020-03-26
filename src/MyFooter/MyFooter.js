@@ -4,6 +4,7 @@ import LineInput from "../Component/LineInput/LineInput";
 import eventService from "../services/EventService";
 import alertDialog2 from "../services/AlertDialog2";
 import {login, logout} from "../services/DataService";
+import DaumMap from "./DaumMap/DaumMap";
 
 export default class MyFooter extends React.Component {
 
@@ -16,11 +17,17 @@ export default class MyFooter extends React.Component {
     this.idInput = React.createRef();
     this.pwdInput = React.createRef();
     this.tierPosition = ["3px", "-27px", "-52px", "-78px", "-104px", "-130px", "-156px", "-182px", "-208px", "-233px"];
+    this.tierMsg = ["새내기학생", "일반학생", "열정학생", "모범학생", "우수학생", "으뜸학생", "운사양디인", "우사양디인", "풍백양디인", "양디신"];
+
+    eventService.listenEvent("updateLoginUserInfoToMyFooter", (data) => {
+      this.setState({loginUserInfo: data});
+    });
   }
 
   componentDidMount() {
-    login("", "", (res) => {
-      let loginUserInfo = JSON.parse(localStorage.getItem('loginUserInfo'));
+    let loginUserInfo = JSON.parse(localStorage.getItem('loginUserInfo'));
+    login((loginUserInfo) ? loginUserInfo.id : "", (loginUserInfo) ? loginUserInfo.pwd : "", (res) => {
+
       if (res.result) {
         if (!loginUserInfo || loginUserInfo.idx !== res.user.idx) {
           logout((res) => {
@@ -31,6 +38,11 @@ export default class MyFooter extends React.Component {
         else {
           this.setState({"loginUserInfo": JSON.parse(localStorage.getItem('loginUserInfo'))});
         }
+      } else {
+        logout((res) => {
+        });
+        localStorage.removeItem('loginUserInfo');
+        this.setState({"loginUserInfo": false});
       }
     });
   }
@@ -47,6 +59,7 @@ export default class MyFooter extends React.Component {
         if (res.result) {
           this.setState({loginUserInfo: res.user});
           localStorage.setItem("loginUserInfo", JSON.stringify(res.user));
+          eventService.emitEvent("changeIconToMyLeftHeader");
           alertDialog2.show("로그인 안내", `반갑습니다. ${res.user.name}님`);
         }
         else {
@@ -60,6 +73,7 @@ export default class MyFooter extends React.Component {
     alertDialog2.show("로그아웃 안내", "로그아웃 됐습니다.");
     this.setState({loginUserInfo: false});
     localStorage.removeItem("loginUserInfo");
+    eventService.emitEvent("changeIconToMyLeftHeader");
     logout((res) => {});
   };
 
@@ -97,7 +111,7 @@ export default class MyFooter extends React.Component {
                            style={{backgroundPosition: `0px ${this.tierPosition[loginUserInfo.tier]}`}}/>
                       {loginUserInfo.name}
                     </h3>
-                    <div className="footer-newsletter__user_tier_text">진정한 양디인</div>
+                    <div className="footer-newsletter__user_tier_text">{this.tierMsg[loginUserInfo.tier]}</div>
                     <div className="uk-button-group flexCenter" style={{marginTop: "20px"}}>
                       <button className="uk-button uk-button-secondary" style={{width: "118px"}}>수정</button>
                       <button className="uk-button uk-button-secondary" onClick={this.logoutEvent}>로그아웃</button>
@@ -106,7 +120,7 @@ export default class MyFooter extends React.Component {
                 )
             }
             <div className="footer-location">
-
+              <DaumMap/>
             </div>
           </div>
           <div className="footerBottom"/>

@@ -4,7 +4,9 @@ import CrackText from "../../Component/CrackText/CrackText";
 import CKEditor from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import alertDialog2 from "../../services/AlertDialog2";
-import {insertWriting} from "../../services/DataService";
+import {insertWriting, updateUserTier} from "../../services/DataService";
+import eventService from "../../services/EventService";
+import alertDialog from "../../services/AlertDialog";
 
 export default class EditPage extends React.Component {
 
@@ -18,9 +20,13 @@ export default class EditPage extends React.Component {
   }
 
   componentDidMount() {
-    setTimeout(() => this.setState({crackTitleTextPercent: 0}), 100);
-    document.addEventListener("scroll", this.changePercent.bind(this));
-
+    if(!JSON.parse(localStorage.getItem("loginUserInfo"))) {
+      alertDialog.show("경고", "로그인 후 이용해 주세요.");
+      this.props.history.push("/");
+    } else {
+      setTimeout(() => this.setState({crackTitleTextPercent: 0}), 100);
+      document.addEventListener("scroll", this.changePercent.bind(this));
+    }
   }
 
   handleEditorChange = (content, editor) => {
@@ -43,11 +49,20 @@ export default class EditPage extends React.Component {
         contents: escape(this.state.contents),
       };
       insertWriting(data, (res) => {
-        console.log(res);
+        // console.log(res);
         if(res.result) {
+          updateUserTier(data.useridx, (ress) => {
+            console.log(ress);
+            if(ress.data) {
+              localStorage.setItem("loginUserInfo", JSON.stringify(ress.data));
+              eventService.emitEvent("updateLoginUserInfoToMyFooter", ress.data);
+              eventService.emitEvent("changeIconToMyLeftHeader");
+            }
+          });
           alertDialog2.show("문서 작성 안내",
             "성공적으로 문서를 작성했습니다. 해당 문서는 왼쪽 헤더에 돋보기 아이콘을 클릭하여 검색할 수 있습니다.");
           this.editTitleInput.current.value = "";
+          this.props.history.push("/");
         }
       });
     }

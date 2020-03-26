@@ -16,6 +16,14 @@
 
 }
 
+.myLeftHeader__tier {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    cursor: pointer;
+}
+
 .myLeftHeader__inner {
     background-color: #231f20;
     position: relative;

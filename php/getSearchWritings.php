@@ -5,7 +5,7 @@ require("db.php");
 
 $text = $_POST["text"];
 
-$sql = "SELECT * FROM `wiki_post` WHERE title LIKE '" . $text . "%' or contents LIKE '%" . $text . "%'";
+$sql = "SELECT * FROM `wiki_post` WHERE title LIKE '" . $text . "%'";
 
 $datas = fetchAll($con, $sql, [$text]);
 

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Calendar from 'react-calendar';
 import SplitText from 'react-pose-text';
 import "./SchedulePage.css";
+import {getDateSchedule} from "../../../services/DataService";
 
 // const SlideHoverBox = styled.div`
 //   width: 350px;
@@ -35,12 +36,14 @@ export default class SchedulePage extends React.Component {
     super(props);
     this.state = {
       date: new Date(),
+      scheduleData: []
     };
     this.contents = React.createRef();
   }
 
 
   componentDidMount() {
+    this.changeSchedules(new Date().toISOString().substr(0, 10));
     setTimeout(() => this.contents.current.style.left = 0, 100);
 
   }
@@ -50,8 +53,19 @@ export default class SchedulePage extends React.Component {
   }
 
   onChange = date => {
-    this.setState({date});
-    console.log(date);
+    // console.log(date);
+    // console.log(new Date(date.toString().replace('GMT+0900', 'GMT+0000')).toISOString());
+    let nowDate = new Date(date.toString().replace('GMT+0900', 'GMT+0000')).toISOString();
+    this.changeSchedules(nowDate.substr(0, 10));
+  };
+
+  changeSchedules = (date) => {
+    getDateSchedule(date, (res) => {
+      // console.log(res.data);
+      if(res.data) {
+        this.setState({scheduleData: res.data});
+      }
+    });
   };
 
   render() {
@@ -70,15 +84,22 @@ export default class SchedulePage extends React.Component {
           />
         </div>
         <div className="popupPage__schedule_wrap">
-          <div className="popupPage__schedule">
-            <div className="popupPage__schedule_date">10:00AM - 10:45AM</div>
-            <div className="popupPage__schedule_name">
-              <SplitText initialPose="exit" pose="enter" charPoses={charPoses}>
-                선한 쌤 도제수업
-              </SplitText>
-            </div>
-            <div className="popupPage__schedule_place">소프트웨어 과 2실</div>
-          </div>
+          {
+            this.state.scheduleData.map((v, i) =>
+              (
+                <div key={i} className="popupPage__schedule">
+                  <div className="popupPage__schedule_date">{v.start_datetime.substr(11, 5)} - {v.end_datetime.substr(11, 5)}</div>
+                  <div className="popupPage__schedule_name">
+                    <SplitText initialPose="exit" pose="enter" charPoses={charPoses}>
+                      {v.title}
+                    </SplitText>
+                  </div>
+                  <div className="popupPage__schedule_place">{v.place_name}</div>
+                </div>
+              )
+            )
+          }
+
         </div>
 
       </div>

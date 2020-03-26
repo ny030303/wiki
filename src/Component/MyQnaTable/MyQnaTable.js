@@ -6,6 +6,7 @@ class MyQnaTable extends React.Component {
 
   render() {
     // const {datas} = this.props;
+    console.log(this.props.qnaItemData);
     return (
       <table className="xans-board-listheader">
         <thead>
@@ -14,21 +15,23 @@ class MyQnaTable extends React.Component {
           <th scope="col" style={{width:"auto"}}>제목</th>
           <th scope="col" style={{width:"77px"}}>작성자</th>
           <th scope="col" style={{width:"100px"}}>작성일</th>
+          <th scope="col" style={{width:"77px"}}>답변여부</th>
         </tr>
         </thead>
         <tbody>
-        <tr onClick={this.props.clickTableItem}>
-          <td scope="row">1</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td className="time">2019-11-01</td>
-        </tr>
-        <tr>
-          <td scope="row">2</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td className="time">2019-11-01</td>
-        </tr>
+        {
+          this.props.qnaItemData.map((v,i) => (
+            <tr className="qnaTableItem" key={i}>
+              <td scope="row">{v.id}</td>
+              <td>
+                <span className="qnaTableItem__title" onClick={this.props.clickTableItem} data-idx={v.id}>{v.title}</span>
+              </td>
+              <td>{v.writer_id}</td>
+              <td className="time">{v.created.substr(0, 10)}</td>
+              <td>{(v.answer_idx) ? "답변완료" : "답변전"}</td>
+            </tr>
+          ))
+        }
         </tbody>
       </table>
     )

@@ -25,6 +25,7 @@ export default class QnaPageEditor extends React.Component {
         if(res) {
           alertDialog.show("QnA 안내", "Q&A 작성이 완료됐습니다.");
           this.props.showQnaEditor();
+          this.props.updateQnaItem();
         } else {
           alertDialog.show("QnA 안내", "Q&A 작성을 실패했습니다.");
         }
@@ -49,7 +50,6 @@ export default class QnaPageEditor extends React.Component {
           <div className="uk-margin">
             <textarea className="uk-textarea" rows="5" placeholder="질문 내용을 입력하세요" ref={this.contents} style={{resize: "none"}}/>
           </div>
-
           <button className="uk-button uk-button-default" onClick={this.QnaWritingEvent}>작성</button>
         </div>
       </div>

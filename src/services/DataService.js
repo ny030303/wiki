@@ -31,7 +31,7 @@ export const login = (uid, pwd, callback) => {
 //   })
 // };
 
-export const putUser = (data, callback) => {
+export const signup = (data, callback) => {
   const formData = new FormData();
   Object.keys(data).forEach(key => formData.append(key, data[key]));
   axios.post(`/php/signup.php`, formData).then(res => {
@@ -49,6 +49,14 @@ export const logout = (callback) => {
   axios.get(`/php/logout.php`, config).then(res => {
     // console.log('logout:', res.data.result);
     if (callback) callback(res.data.result);
+  });
+};
+
+export const updateUserTier = (idx, callback) => {
+  // localStorage.removeItem('loginUser');
+  axios.get(`/php/updateUserTier.php?idx=${idx}`, config).then(res => {
+    // console.log('logout:', res.data.result);
+    if (callback) callback(res.data);
   });
 };
 
@@ -100,3 +108,32 @@ export const insertQna = (data, callback) => {
     if (callback) callback(res.data);
   });
 };
+
+export const getQna = (data, callback) => {
+  const formData = new FormData();
+  Object.keys(data).forEach(key => formData.append(key, data[key]));
+  axios.post(`/php/getQna.php`, formData).then(res => {
+    if (callback) callback(res.data);
+  });
+};
+
+export const insertQnaAnswer = (data, callback) => {
+  const formData = new FormData();
+  Object.keys(data).forEach(key => formData.append(key, data[key]));
+  axios.post(`/php/insertQnaAnswer.php`, formData).then(res => {
+    if (callback) callback(res.data);
+  });
+};
+
+//========= schedule =============
+
+export const getDateSchedule = (date, callback) => {
+  // localStorage.removeItem('loginUser');
+  axios.get(`/php/getDateSchedule.php?date=${date}`, config).then(res => {
+    // console.log('logout:', res.data.result);
+    if (callback) callback(res.data);
+  });
+};
+
+
+

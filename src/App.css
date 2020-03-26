@@ -12,6 +12,12 @@ h1, h2,h3,h4 {
     margin: 0;
 }
 
+.ulStyle1 {
+    color: #231f20;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+}
+
 .intrinsic {
     height: 0;
     width: 100%;
