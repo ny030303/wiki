@@ -75,10 +75,10 @@ export default class CrackImageSection extends React.Component {
             <div className="purple-split-artpiece" style={{backgroundImage: `url("${this.imageList[2]}")`, top: `${this.state.isImageChange ? "0" : "100%"}`}}/>
           </div>
 
-          <div className="split-artpiece__play_btn" style={{opacity: `${this.state.isImageChange ? "0" : "100%"}`}}>
+          <a className="split-artpiece__play_btn" href="http://code.gondr.net/" style={{opacity: `${this.state.isImageChange ? "0" : "100%"}`}}>
             <img src={mySvg}/>
-          </div>
-          <div className="video-modal__caption" style={{opacity: `${this.state.isImageChange ? "0" : "100%"}`}}>Play video about the Frans Hals Museum</div>
+          </a>
+          <div className="video-modal__caption" style={{opacity: `${this.state.isImageChange ? "0" : "100%"}`}}>Go and watch the previous videos.</div>
           <div className="split-artpieces__bottom" >
             <div className="split-artpiece" style={{backgroundImage: `url("${this.imageList[1]}")`, top: `${this.state.isImageChange ? "-100%" : "0"}`}}/>
             <div className="purple-split-artpiece" style={{backgroundImage: `url("${this.imageList[3]}")`, top: `${this.state.isImageChange ? "0" : "-100%"}`}}/>

@@ -72,7 +72,7 @@ export default class QnaPageItem extends React.Component {
               {
                 (() => {
                   if (!qnaPageItemInfo.answer_idx) {
-                    if (qnaPageItemInfo.writer_idx !== userInfo.idx) {
+                    if (qnaPageItemInfo.writer_idx !== userInfo.idx && Number(userInfo.tier) >= 2) {
                       return (
                         <div>
                           <div style={{margin: "20px"}}/>

@@ -53,7 +53,6 @@
 .locations__image {
     padding-top: 61.5174%;
     color: rgb(154, 209, 139);
-    background-image: url(https://www.franshalsmuseum.nl/wp-content/uploads/2020/01/hof-1.jpg);
     margin-bottom: .5em;
     height: 0;
     width: 100%;
@@ -67,7 +66,14 @@
     margin-bottom: 4vw;
     font-family: 'Alegreya Sans', sans-serif;
     font-weight: normal;
+
     /*font-family: 'Noto Sans KR', sans-serif;*/
+}
+
+.locations__address span {
+    font-size: 16px;
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 0.3;
 }
 
 .locations__address strong {
@@ -93,7 +99,14 @@
     font-weight: 300;
     letter-spacing: .01em;
     line-height: 1em;
+    display: flex;
+    justify-content: center;
+}
 
+.locations__copy li {
+    /*font-size: 21px;*/
+    margin: 5px;
+    text-align: left;
 }
 
 @media (max-width: 1500px) {

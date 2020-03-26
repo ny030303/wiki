@@ -16,7 +16,7 @@ $result1 = fetch($con, $query1, [$idx]);
 
 $user_exp = (int)$result1->exp;
 $user_tier = (int)$result1->tier;
-$sum = $user_exp + 25;
+$sum = $user_exp + 50;
 
 $is_add_exp = true;
 

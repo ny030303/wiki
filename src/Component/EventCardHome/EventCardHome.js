@@ -25,7 +25,7 @@ class EventCardHome extends React.Component {
               />
             </div>
           </div>
-          <div className="event-card-home__title">Haarlem Heroes. Other Masters</div>
+          <div className="event-card-home__title">{this.props.bigTitle}</div>
         </div>
         <div className="event-card-home__info">
 

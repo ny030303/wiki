@@ -86,11 +86,11 @@ export default class PinkSection extends React.Component {
 
               <div id="event-card-list">
                 <Slider {...settings}>
-                  <EventCardHome imageLink="/image/streetview/view1.png" type="view1"/>
-                  <EventCardHome imageLink="/image/streetview/view2.png" type="view2"/>
-                  <EventCardHome imageLink="/image/streetview/view3.png" type="view3"/>
-                  <EventCardHome imageLink="/image/streetview/view4.png" type="view4"/>
-                  <EventCardHome imageLink="/image/streetview/view5.png" type="view5"/>
+                  <EventCardHome imageLink="/image/streetview/view1.png" type="view1" bigTitle="just SAMPLE No.1" smallTitle=""/>
+                  <EventCardHome imageLink="/image/streetview/view2.png" type="view2" bigTitle="just SAMPLE No.2" smallTitle=""/>
+                  <EventCardHome imageLink="/image/streetview/view3.png" type="view3" bigTitle="just SAMPLE No.3" smallTitle=""/>
+                  <EventCardHome imageLink="/image/streetview/view4.png" type="view4" bigTitle="just SAMPLE No.4" smallTitle=""/>
+                  <EventCardHome imageLink="/image/streetview/view5.png" type="view5" bigTitle="just SAMPLE No.5" smallTitle=""/>
                   {/*<EventCardHome imageLink="/image/streetview/view6.png" type="view6"/>*/}
                 </Slider>
               </div>

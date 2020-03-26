@@ -89,8 +89,8 @@ export default class MyFooter extends React.Component {
                 (
 
                   <div className="footer-newsletter">
-                    <h3 className="footer-newsletter__subtitle">Newsletter</h3>
-                    <div className="footer-newsletter__title">Frans likes to send you emails</div>
+                    <h3 className="footer-newsletter__subtitle">LOGIN FORM</h3>
+                    <div className="footer-newsletter__title">Sign in to your account.</div>
                     <br/>
                     <div className="footer-newsletter__input_wrap">
                       <LineInput inputRef={this.idInput} placeHolder="ID" labelFor="loginIdInput"/>

@@ -42,9 +42,9 @@ export default class YellowSection extends React.Component {
 
               <CrackText textClass="home-hero__title" textName="WELECOME" crackPercent={this.state.mainCrackTextPercent}/>
               <Slider {...settings}>
-                <div className="viewportText">Final weeks: (Hal - Grote Markt): Lubaina Himid & Marianna Simnett</div>
-                <div className="viewportText">Now on view (Hof - Groot Heiligland): Haarlem Heroes. Other Masters</div>
-                <div className="viewportText">3. Now on view Haarlem</div>
+                <div className="viewportText">손 씻기, 마스크 착용하고 외출을 자제해서 코로나19를 예방합시다.</div>
+                <div className="viewportText">바로 아래에 사진들을 누르시면 기능반 실습실이나 학교를 구경할 수 있습니다.</div>
+                <div className="viewportText">더는 공지 할 것이 없어보임니다. 바이러스 주의하세요</div>
               </Slider>
             </div>
 

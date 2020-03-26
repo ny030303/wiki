@@ -39,7 +39,7 @@ export default class PurpleSection extends React.Component {
               name="clipboard"
               style={{ marginRight: ".5em" }}
             />
-            Explore museum highlights and more
+            You can find new information here.
             <div className="active-line__line"/>
           </p>
         </div>
@@ -50,8 +50,8 @@ export default class PurpleSection extends React.Component {
               <ImageBox image={"/image/class_image8.jpg"} imageHeight="8vw" direction={false} borderColor="rgb(249, 160, 78)"/>
             </div>
             <div className="news-card__infos">
-              <div className="news-card__post-date"> 4th March 2020</div>
-              <h2 className="news-card__title">Update corona virus</h2>
+              <div className="news-card__post-date"> 17th September 2019</div>
+              <h2 className="news-card__title">History of Yangyoung Digital High School</h2>
             </div>
           </div>
 
@@ -60,8 +60,8 @@ export default class PurpleSection extends React.Component {
               <ImageBox image={"/image/class_image6.jpg"} imageHeight="8vw" direction={false} borderColor="rgb(249, 160, 78)"/>
             </div>
             <div className="news-card__infos">
-              <div className="news-card__post-date"> 4th March 2020</div>
-              <h2 className="news-card__title">Province chooses Frans Hals Museum and Amsterdam Museum</h2>
+              <div className="news-card__post-date"> 9th September 2019</div>
+              <h2 className="news-card__title">Design of Education</h2>
             </div>
           </div>
         </div>

@@ -52,7 +52,7 @@ export default class MyNewsBox extends React.Component {
         </div>
         <div className="myNewsBox__bottomBtn" onClick={this.showNewBox}>
           <div className="myNewsBox__bottomBtn_text">
-            <SplitText initialPose="exit" pose="enter" charPoses={charPoses}>새 소식&nbsp;&nbsp;</SplitText>
+            <SplitText initialPose="exit" pose="enter" charPoses={charPoses}>새 글 소식&nbsp;&nbsp;</SplitText>
             <FontAwesome
               className=""
               name={"paper-plane"}

@@ -68,9 +68,9 @@ export default class ClassPeoplePage extends React.Component {
         </ul>
 
         <div className="tab-content">
-          <div className="tab-pane container active" id="home">...</div>
-          <div className="tab-pane container fade" id="menu1">...</div>
-          <div className="tab-pane container fade" id="menu2">...</div>
+          <div  style={{textAlign: "center", marginTop: "20px"}} className="tab-pane container active" id="home">공사중..</div>
+          <div  style={{textAlign: "center", marginTop: "20px"}} className="tab-pane container fade" id="menu1">공사중..</div>
+          <div  style={{textAlign: "center", marginTop: "20px"}} className="tab-pane container fade" id="menu2">공사중..</div>
         </div>
       </div>
     );
