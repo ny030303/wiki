@@ -10,7 +10,6 @@ export  default class RoundInput extends React.Component {
     };
   }
 
-
   render() {
     return (
       <div className="roundInput__wrap">

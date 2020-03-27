@@ -16,8 +16,9 @@ class SearchResultPageItem extends React.Component {
 
   render() {
     const {info} = this.props;
+    console.log(info);
     return (
-      <div className="searchResultPage__result" onClick={() => this.props.history.push(`/writing/${info.id}`)}>
+      <div className="searchResultPage__result" onClick={() => this.props.history.push(`/wiki/${info.title}`)}>
         <FontAwesome
           className=""
           name={"file"}

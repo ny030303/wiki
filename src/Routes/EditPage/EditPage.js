@@ -4,9 +4,10 @@ import CrackText from "../../Component/CrackText/CrackText";
 import CKEditor from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import alertDialog2 from "../../services/AlertDialog2";
-import {insertWriting, updateUserTier} from "../../services/DataService";
+import {getWritingFromTitle, insertWriting, updateUserTier} from "../../services/DataService";
 import eventService from "../../services/EventService";
 import alertDialog from "../../services/AlertDialog";
+import * as uikit from 'uikit/dist/js/uikit.min';
 
 export default class EditPage extends React.Component {
 
@@ -14,16 +15,21 @@ export default class EditPage extends React.Component {
     super(props);
     this.editTitleInput = React.createRef();
     this.state = {
+      isDuplicated: false,
       crackTitleTextPercent: 100,
       contents: ""
     };
   }
 
   componentDidMount() {
-    if(!JSON.parse(localStorage.getItem("loginUserInfo"))) {
+    this.editTitleInput.current.addEventListener('blur', this.onTitleFocusOut);
+    this.editTitleInput.current.addEventListener("keypress", e => e.keyCode === 13 ? e.target.blur(): {});
+
+    if (!JSON.parse(localStorage.getItem("loginUserInfo"))) {
       alertDialog.show("경고", "로그인 후 이용해 주세요.");
       this.props.history.push("/");
-    } else {
+    }
+    else {
       setTimeout(() => this.setState({crackTitleTextPercent: 0}), 100);
       document.addEventListener("scroll", this.changePercent.bind(this));
     }
@@ -40,9 +46,13 @@ export default class EditPage extends React.Component {
   };
 
   postWritingEvent = () => {
-    if (this.state.contents === "" || this.editTitleInput.current.value.trim() === "") {
+    if (this.state.isDuplicated) {
+      alertDialog2.show("잠깐만!", "동일한 문서가 존재합니다. 제목을 수정해주세요.");
+    }
+    else if (this.state.contents === "" || this.editTitleInput.current.value.trim() === "") {
       alertDialog2.show("잠깐만!", "빈 부분이 있으면 안 됩니다.");
-    } else {
+    }
+    else {
       let data = {
         useridx: JSON.parse(localStorage.getItem("loginUserInfo")).idx,
         title: this.editTitleInput.current.value.trim(),
@@ -50,10 +60,10 @@ export default class EditPage extends React.Component {
       };
       insertWriting(data, (res) => {
         // console.log(res);
-        if(res.result) {
+        if (res.result) {
           updateUserTier(data.useridx, (ress) => {
             console.log(ress);
-            if(ress.data) {
+            if (ress.data) {
               localStorage.setItem("loginUserInfo", JSON.stringify(ress.data));
               eventService.emitEvent("updateLoginUserInfoToMyFooter", ress.data);
               eventService.emitEvent("changeIconToMyLeftHeader");
@@ -64,6 +74,26 @@ export default class EditPage extends React.Component {
           this.editTitleInput.current.value = "";
           this.props.history.push("/");
         }
+      });
+    }
+  };
+
+  onTitleFocusOut = () => {
+    let editValue = this.editTitleInput.current.value.trim();
+    editValue = editValue.replace(/\"/g, "");
+    editValue = editValue.replace(/\'/g, "");
+    if (editValue.length > 0) {
+      this.editTitleInput.current.value = editValue;
+      getWritingFromTitle({title: editValue}, res => {
+        console.log("onTitleFocusOut:", res, typeof res);
+        let isDuplicated = (res.data !== false);
+        if (isDuplicated) {
+          uikit.modal.confirm("이미 등록된 문서입니다. 해당 문서로 이동할까요?").then(
+              () => this.props.history.push(`/wiki/${editValue}`),  // Ok
+              () => console.log('UIkit.modal.confirm() - Cancel button') // Cancel
+          );
+        }
+        this.setState({isDuplicated: isDuplicated});
       });
     }
   };
@@ -84,6 +114,13 @@ export default class EditPage extends React.Component {
             <br/><br/><br/><br/>
             <div className="uk-margin">
               <input className="uk-input" type="text" placeholder="Title" ref={this.editTitleInput}/>
+              {
+                this.state.isDuplicated ? (
+                  <span style={{color: "red", fontWeight: "bold", paddingLeft: "10px"}}>
+                    동일한 문서가 존재합니다. 제목을 변경해주세요.
+                  </span>
+                ) : null
+              }
             </div>
             <CKEditor
               editor={ClassicEditor}

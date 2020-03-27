@@ -39,7 +39,8 @@ class App extends React.Component {
             <Route exact path="/edit" component={EditPage}/>
             <Route exact path="/search/:text" component={SearchResultPage}/>
             <Route exact path="/panorama/:type" component={PanoramaPage}/>
-            <Route exact path="/writing/:writingId" component={WritingPage}/>
+            {/*<Route exact path="/writing/:writingId" component={WritingPage}/>*/}
+            <Route exact path="/wiki/:title" component={WritingPage}/>
             <Route exact path="/qna" component={QnaPage}/>
           </Switch>
           {this.state.isPanorama ? null :  (<MyFooter/>)}

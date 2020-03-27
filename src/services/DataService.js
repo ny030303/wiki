@@ -79,6 +79,14 @@ export const getWriting = (data, callback) => {
   });
 };
 
+export const getWritingFromTitle = (data, callback) => {
+  const formData = new FormData();
+  Object.keys(data).forEach(key => formData.append(key, data[key]));
+  axios.post(`/php/getWritingFromTitle.php`, formData).then(res => {
+    if (callback) callback(res.data);
+  });
+};
+
 export const getSearchWritings = (data, callback) => {
   const formData = new FormData();
   Object.keys(data).forEach(key => formData.append(key, data[key]));

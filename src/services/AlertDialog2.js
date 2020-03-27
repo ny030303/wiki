@@ -13,7 +13,7 @@ class AlertDialog2 {
                   <p>${message}</p>
               </div>
               <div class="uk-modal-footer uk-text-right">
-                  <button class="uk-button uk-button-default uk-modal-close uikit-close-btn" type="button">Cancel</button>
+                  <button class="uk-button uk-button-default uk-modal-close uikit-close-btn" type="button">Close</button>
               </div>
           </div>
       </div>`

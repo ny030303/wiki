@@ -4,7 +4,7 @@ import {withRouter} from "react-router-dom";
 class MyNewsBoxItem extends React.Component {
 
   gotoWritingPage = () => {
-    this.props.history.push(`/writing/${this.props.info.id}`);
+    this.props.history.push(`/wiki/${this.props.info.title}`);
     this.props.closeNewBox();
   };
 

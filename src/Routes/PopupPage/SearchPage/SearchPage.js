@@ -27,6 +27,7 @@ class SearchPage extends React.Component {
 
   componentDidMount() {
     setTimeout(() => this.contents.current.style.left = 0, 100);
+    this.searchInput.current.addEventListener("keypress", e => e.keyCode === 13 ? this.searchEvent() : {});
   }
 
   // componentWillUnmount() {

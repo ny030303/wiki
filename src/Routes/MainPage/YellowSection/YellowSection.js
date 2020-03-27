@@ -3,8 +3,9 @@ import "./YellowSection.css";
 import Slider from "react-slick";
 import CrackText from "../../../Component/CrackText/CrackText";
 import SlideBtn from "../../../Component/SlideBtn/SlideBtn";
+import {withRouter} from "react-router-dom";
 
-export default class YellowSection extends React.Component {
+class YellowSection extends React.Component {
 
   constructor(props) {
     super(props);
@@ -40,7 +41,7 @@ export default class YellowSection extends React.Component {
             <div className="home-hero__logo"/>
             <div style={{marginBottom: "1em"}}>
 
-              <CrackText textClass="home-hero__title" textName="WELECOME" crackPercent={this.state.mainCrackTextPercent}/>
+              <CrackText textClass="home-hero__title" textName="WELCOME" crackPercent={this.state.mainCrackTextPercent}/>
               <Slider {...settings}>
                 <div className="viewportText">손 씻기, 마스크 착용하고 외출을 자제해서 코로나19를 예방합시다.</div>
                 <div className="viewportText">바로 아래에 사진들을 누르시면 기능반 실습실이나 학교를 구경할 수 있습니다.</div>
@@ -52,10 +53,13 @@ export default class YellowSection extends React.Component {
           <div className="top-wrapper">
             <SlideBtn btnColors={{backgroundColor: "#231f20", color: "#fce373"}}
                       hoverBtnColors={{backgroundColor: "#caa498", color: "#231f20"}}
-                      textName="Buy tickets" className="yellowMainSlideBtn" iconArrow="left"/>
+                      textName="Let's go fill it out" className="yellowMainSlideBtn" iconArrow="left"
+                      btnClickEvent={() => this.props.history.push("/edit")}/>
           </div>
         </div>
       </div>
     );
   };
-};
+}
+
+export default  withRouter(YellowSection);
